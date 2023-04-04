@@ -1,0 +1,1 @@
+create unique index IDX_DEMO_PARKING_LOT_UNIQ_LOT_ID on DEMO_PARKING_LOT (LOT_ID) ;

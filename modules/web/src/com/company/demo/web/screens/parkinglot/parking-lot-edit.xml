@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://parkingLotEdit.caption"
+        focusComponent="form"
+        messagesPack="com.company.demo.web.screens.parkinglot">
+    <data>
+        <instance id="parkingLotDc"
+                  class="com.company.demo.entity.ParkingLot">
+            <view extends="_local"/>
+            <loader/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="parkingLotDc">
+            <column width="350px">
+                <textField id="lotIDField" property="lotID"/>
+                <textField id="lotNumberField" property="lotNumber"/>
+                <dateField id="validFromField" property="validFrom"/>
+                <dateField id="validToField" property="validTo"/>
+                <textField id="levelDescriptionField" property="levelDescription"/>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

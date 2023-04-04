@@ -1,0 +1,2 @@
+alter table DEMO_APPLICANT add constraint FK_DEMO_APPLICANT_ON_LOT_ID foreign key (LOT_ID_ID) references DEMO_PARKING_LOT(ID);
+create index IDX_DEMO_APPLICANT_ON_LOT_ID on DEMO_APPLICANT (LOT_ID_ID);

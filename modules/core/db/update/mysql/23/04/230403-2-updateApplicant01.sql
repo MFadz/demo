@@ -1,0 +1,2 @@
+alter table DEMO_APPLICANT change column IDENTIFICATION_NO IDENTIFICATION_NO__U98597 int^
+alter table DEMO_APPLICANT add column IDENTIFICATION_NO varchar(255) ;

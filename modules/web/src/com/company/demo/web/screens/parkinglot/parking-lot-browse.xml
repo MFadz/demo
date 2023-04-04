@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://parkingLotBrowse.caption"
+        focusComponent="parkingLotsTable"
+        messagesPack="com.company.demo.web.screens.parkinglot">
+    <data readOnly="true">
+        <collection id="parkingLotsDc"
+                    class="com.company.demo.entity.ParkingLot">
+            <view extends="_local"/>
+            <loader id="parkingLotsDl">
+                <query>
+                    <![CDATA[select e from demo_ParkingLot e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="parkingLotsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="parkingLotsTable"
+                dataLoader="parkingLotsDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="parkingLotsTable"
+                    width="100%"
+                    dataContainer="parkingLotsDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+                <action id="add" type="add"/>
+            </actions>
+            <columns>
+                <column id="lotID"/>
+                <column id="lotNumber"/>
+                <column id="validFrom"/>
+                <column id="validTo"/>
+                <column id="levelDescription"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="parkingLotsTable.create"/>
+                <button id="editBtn" action="parkingLotsTable.edit"/>
+                <button id="removeBtn" action="parkingLotsTable.remove"/>
+                <button id="addBtn" action="parkingLotsTable.add"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <menu id="application-demo" insertBefore="administration" caption="mainMsg://menu_config.application-demo">
+        <item screen="demo_Applicant.browse" caption="mainMsg://menu_config.demo_Applicant.browse"/>
+        <item screen="demo_ParkingLot.browse" caption="mainMsg://menu_config.demo_ParkingLot.browse"/>
+        <item screen="demo_VehicleType.browse" caption="mainMsg://menu_config.demo_VehicleType.browse"/>
+    </menu>
+</menu-config>
